@@ -1,0 +1,23 @@
+.home{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#111827;
+
+    color:white;
+
+    h1{
+        font-size:60px;
+        margin-bottom:20px;
+    }
+
+    p{
+        font-size:24px;
+        color:#bdbdbd;
+    }
+}

@@ -17,6 +17,11 @@
   backdrop-filter: blur(12px);
   transition: border-color 0.3s, transform 0.3s;
 
+  [data-theme='light'] & {
+    background: var(--bg-card-solid);
+    box-shadow: var(--shadow-card);
+  }
+
   &:hover {
     border-color: rgba(37, 99, 235, 0.3);
     transform: translateX(4px);
@@ -77,6 +82,11 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   backdrop-filter: blur(12px);
+
+  [data-theme='light'] & {
+    background: var(--bg-card-solid);
+    box-shadow: var(--shadow-card);
+  }
 }
 
 .form-row {

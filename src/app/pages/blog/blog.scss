@@ -12,6 +12,11 @@
   backdrop-filter: blur(12px);
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 
+  [data-theme='light'] & {
+    background: var(--bg-card-solid);
+    box-shadow: var(--shadow-card);
+  }
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-glow);

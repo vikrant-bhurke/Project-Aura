@@ -1,6 +1,6 @@
 <section class="featured section" id="projects">
   <div class="container">
-    <div class="featured-header">
+    <div class="featured-header" appReveal>
       <app-section-header
         tag="Projects"
         title="Featured Work"
@@ -10,8 +10,8 @@
     </div>
 
     <div class="projects-grid">
-      @for (project of featuredProjects; track project.title) {
-        <article class="project-card">
+      @for (project of featuredProjects; track project.title; let i = $index) {
+        <article class="project-card" appReveal [delay]="(i * 100) + 'ms'">
           <div class="project-image" [style.background]="project.gradient">
             <div class="project-mock">
               <div class="mock-bar"></div>

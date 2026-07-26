@@ -10,6 +10,10 @@
   border-radius: var(--radius);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-card);
+
+  [data-theme='light'] & {
+    background: var(--bg-card-solid);
+  }
 }
 
 @mixin section-header {
@@ -60,12 +64,14 @@
       position: absolute;
       left: 50%;
       bottom: -12px;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scaleX(0.4);
       width: 64px;
       height: 4px;
       border-radius: 999px;
       background: linear-gradient(90deg, #2563eb, #60a5fa);
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+      transform-origin: center;
+      animation: underlineGrow 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
     }
   }
 

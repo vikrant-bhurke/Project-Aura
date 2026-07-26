@@ -1,28 +1,34 @@
 <section class="hero" id="home">
+  <div class="hero-ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+
   <div class="container hero-container">
     <div class="hero-left">
-      <div class="hero-badge">👋 Hi, I'm</div>
+      <div class="hero-badge anim-item" style="--i: 0">👋 Hi, I'm</div>
 
-      <h1>
+      <h1 class="anim-item" style="--i: 1">
         Vikrant
         <span>Bhurke</span>
       </h1>
 
-      <h2 class="hero-roles">
+      <h2 class="hero-roles anim-item" style="--i: 2">
         Software Engineer <span>|</span> Angular Expert <span>|</span> AI Enthusiast <span>|</span> Future Export Entrepreneur
       </h2>
 
-      <p class="hero-bio">
+      <p class="hero-bio anim-item" style="--i: 3">
         Building enterprise-grade web applications, beautiful user experiences
         and scalable digital products with Angular and modern technologies.
       </p>
 
-      <div class="hero-buttons">
+      <div class="hero-buttons anim-item" style="--i: 4">
         <a routerLink="/" fragment="projects" class="primary-btn">View Projects</a>
         <a [href]="resumeUrl" class="secondary-btn" download>Download Resume</a>
       </div>
 
-      <div class="socials">
+      <div class="socials anim-item" style="--i: 5">
         <a [href]="social.github" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>

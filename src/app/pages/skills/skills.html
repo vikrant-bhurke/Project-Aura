@@ -1,12 +1,14 @@
 <section class="skills section" id="skills">
   <div class="container">
-    <app-section-header
-      tag="Skills"
-      title="My Tech Stack"
-      accent="Stack"
-      subtitle="A comprehensive toolkit for building modern, scalable web applications." />
+    <div appReveal>
+      <app-section-header
+        tag="Skills"
+        title="My Tech Stack"
+        accent="Stack"
+        subtitle="A comprehensive toolkit for building modern, scalable web applications." />
+    </div>
 
-    <div class="tabs">
+    <div class="tabs" appReveal delay="80ms">
       @for (tab of tabs; track tab.key) {
         <button
           class="tab"
@@ -18,8 +20,8 @@
     </div>
 
     <div class="skills-grid">
-      @for (skill of activeSkills(); track skill.name) {
-        <div class="skill-card">
+      @for (skill of activeSkills(); track skill.name; let i = $index) {
+        <div class="skill-card" [style.animation-delay]="(i * 40) + 'ms'">
           <div class="skill-icon">
             <img [src]="skill.icon" [alt]="skill.name" />
           </div>

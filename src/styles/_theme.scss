@@ -1,6 +1,6 @@
 body {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.18), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, var(--hero-glow), transparent),
     radial-gradient(ellipse 40% 40% at 100% 0%, rgba(45, 124, 255, 0.08), transparent),
     var(--bg-primary);
   color: var(--text-primary);
@@ -8,7 +8,19 @@ body {
   min-height: 100%;
 }
 
+[data-theme='light'] body {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -15%, rgba(37, 99, 235, 0.14), transparent 55%),
+    radial-gradient(ellipse 45% 40% at 100% 10%, rgba(59, 130, 246, 0.08), transparent 50%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 45%, #eef2f7 100%);
+}
+
 ::selection {
   background: rgba(37, 99, 235, 0.35);
   color: #fff;
+}
+
+[data-theme='light'] ::selection {
+  background: rgba(37, 99, 235, 0.22);
+  color: #0f172a;
 }

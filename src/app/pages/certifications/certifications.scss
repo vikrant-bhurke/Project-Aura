@@ -14,12 +14,21 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   backdrop-filter: blur(12px);
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, border-color 0.35s;
+
+  [data-theme='light'] & {
+    background: var(--bg-card-solid);
+    box-shadow: var(--shadow-card);
+  }
 
   &:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-glow);
-    border-color: rgba(37, 99, 235, 0.3);
+    border-color: rgba(37, 99, 235, 0.35);
+
+    .cert-icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
   }
 
   h3 {
@@ -41,6 +50,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 24px color-mix(in srgb, var(--cert-color) 20%, transparent);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 
   img {
     width: 40px;

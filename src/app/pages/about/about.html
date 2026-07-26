@@ -1,12 +1,12 @@
 <section class="about section" id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image">
+      <div class="about-image" appReveal>
         <img [src]="about.image" alt="Vikrant Bhurke at work" />
         <div class="image-glow"></div>
       </div>
 
-      <div class="about-content">
+      <div class="about-content" appReveal delay="100ms">
         <span class="section-label">About</span>
         <h2>About <span class="title-accent">Me</span></h2>
         <p class="bio">{{ about.bio }}</p>
@@ -19,8 +19,8 @@
       </div>
 
       <div class="about-facts">
-        @for (item of about.highlights; track item.label) {
-          <div class="fact-card">
+        @for (item of about.highlights; track item.label; let i = $index) {
+          <div class="fact-card" appReveal [delay]="(150 + i * 90) + 'ms'">
             <div class="fact-icon">
               <mat-icon>{{ item.icon }}</mat-icon>
             </div>

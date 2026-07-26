@@ -1,14 +1,16 @@
 <section class="experience section" id="experience">
   <div class="container">
-    <app-section-header
-      tag="Experience"
-      title="My Journey"
-      accent="Journey"
-      subtitle="Professional experience building enterprise Angular applications." />
+    <div appReveal>
+      <app-section-header
+        tag="Experience"
+        title="My Journey"
+        accent="Journey"
+        subtitle="Professional experience building enterprise Angular applications." />
+    </div>
 
     <div class="timeline">
-      @for (job of experience; track job.company) {
-        <div class="timeline-item">
+      @for (job of experience; track job.company; let i = $index) {
+        <div class="timeline-item" appReveal [delay]="(i * 120) + 'ms'">
           <div class="timeline-marker">
             <div class="company-logo">{{ job.logo }}</div>
           </div>

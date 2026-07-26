@@ -1,14 +1,16 @@
 <section class="testimonials section" id="testimonials">
   <div class="container">
-    <app-section-header
-      tag="Testimonials"
-      title="What People Say"
-      accent="Say"
-      subtitle="Feedback from colleagues and clients I've worked with." />
+    <div appReveal>
+      <app-section-header
+        tag="Testimonials"
+        title="What People Say"
+        accent="Say"
+        subtitle="Feedback from colleagues and clients I've worked with." />
+    </div>
 
     <div class="testimonials-grid">
-      @for (item of testimonials; track item.name) {
-        <article class="testimonial-card">
+      @for (item of testimonials; track item.name; let i = $index) {
+        <article class="testimonial-card" appReveal [delay]="(i * 100) + 'ms'">
           <div class="author">
             <div class="avatar">{{ item.avatar }}</div>
             <div>

@@ -14,10 +14,23 @@
   justify-content: center;
   z-index: 998;
   box-shadow: var(--shadow-glow);
-  transition: transform 0.3s;
+  animation: scrollIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
     transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
+  }
+}
+
+@keyframes scrollIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

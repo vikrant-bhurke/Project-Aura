@@ -144,35 +144,26 @@
 
 .hero-visual {
   position: relative;
-  width: min(460px, 100%);
+  width: min(520px, 100%);
   aspect-ratio: 1;
 }
 
 .glow-ring {
   position: absolute;
+  inset: 0;
   border-radius: 50%;
   pointer-events: none;
-}
-
-.ring-outer {
-  inset: 0;
-  border: 2px solid rgba(45, 124, 255, 0.55);
+  border: 2px solid rgba(45, 124, 255, 0.7);
   box-shadow:
-    0 0 40px rgba(37, 99, 235, 0.35),
-    0 0 100px rgba(37, 99, 235, 0.2),
+    0 0 40px rgba(37, 99, 235, 0.4),
+    0 0 100px rgba(37, 99, 235, 0.25),
     inset 0 0 30px rgba(37, 99, 235, 0.12);
   animation: pulseRing 4s ease-in-out infinite;
 }
 
-.ring-inner {
-  inset: 18px;
-  border: 1px solid rgba(45, 124, 255, 0.25);
-  box-shadow: 0 0 40px rgba(37, 99, 235, 0.15);
-}
-
 .profile-frame {
   position: absolute;
-  inset: 36px;
+  inset: 18px;
   border-radius: 50%;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(37, 99, 235, 0.15), rgba(15, 23, 42, 0.6));
@@ -249,14 +240,14 @@
   0%,
   100% {
     box-shadow:
-      0 0 40px rgba(37, 99, 235, 0.35),
-      0 0 100px rgba(37, 99, 235, 0.2),
+      0 0 40px rgba(37, 99, 235, 0.4),
+      0 0 100px rgba(37, 99, 235, 0.25),
       inset 0 0 30px rgba(37, 99, 235, 0.12);
   }
   50% {
     box-shadow:
-      0 0 55px rgba(37, 99, 235, 0.5),
-      0 0 130px rgba(37, 99, 235, 0.3),
+      0 0 55px rgba(37, 99, 235, 0.55),
+      0 0 130px rgba(37, 99, 235, 0.35),
       inset 0 0 36px rgba(37, 99, 235, 0.18);
   }
 }
@@ -293,12 +284,12 @@
   }
 
   .hero-visual {
-    width: min(280px, 72vw);
+    width: min(340px, 78vw);
     margin: 0 auto;
   }
 
   .profile-frame {
-    inset: 28px;
+    inset: 14px;
   }
 
   .tech {
@@ -350,7 +341,11 @@
   }
 
   .hero-visual {
-    width: min(240px, 70vw);
+    width: min(280px, 74vw);
+  }
+
+  .profile-frame {
+    inset: 12px;
   }
 
   .tech {

@@ -1,0 +1,9 @@
+<div class="section-header">
+  @if (tag()) {
+    <span class="section-tag">{{ tag() }}</span>
+  }
+  <h2 [innerHTML]="styledTitle()"></h2>
+  @if (subtitle()) {
+    <p>{{ subtitle() }}</p>
+  }
+</div>

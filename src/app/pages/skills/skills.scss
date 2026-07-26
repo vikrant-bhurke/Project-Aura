@@ -1,0 +1,124 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.tab {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.tab.active {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.skill-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--border);
+
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+}
+
+.skill-card span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .tab {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 18px 10px;
+    gap: 10px;
+  }
+
+  .skill-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .skill-card span {
+    font-size: 12px;
+  }
+}

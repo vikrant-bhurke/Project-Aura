@@ -1,15 +1,221 @@
-footer{
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 72px 0 0;
+  margin-top: 20px;
+}
 
-    height:80px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.5fr;
+  gap: 36px;
+  padding-bottom: 48px;
+}
 
-    display:flex;
+.footer-brand {
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 
-    justify-content:center;
+    span {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+  }
 
-    align-items:center;
+  p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 280px;
+  }
+}
 
-    background:#0b1220;
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
 
-    color:white;
+.footer-socials {
+  display: flex;
+  gap: 10px;
 
+  a {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--accent-bright);
+      border-color: rgba(37, 99, 235, 0.35);
+      background: rgba(37, 99, 235, 0.1);
+    }
+  }
+}
+
+.footer-col {
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+  }
+
+  a,
+  span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-bright);
+  }
+}
+
+.footer-newsletter {
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+  }
+
+  button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-glow);
+    }
+  }
+}
+
+.subscribed-msg {
+  color: #22c55e;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+  gap: 12px;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--accent-bright);
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 48px 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 32px;
+  }
+
+  .footer-brand p {
+    max-width: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 18px 0 24px;
+  }
+
+  .footer-legal {
+    justify-content: center;
+  }
 }

@@ -1,5 +1,4 @@
-.app-container{
-
-    padding-top:70px;
-
+.app-container {
+  padding-top: var(--nav-height);
+  min-height: 60vh;
 }

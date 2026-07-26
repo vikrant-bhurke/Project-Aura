@@ -1,0 +1,29 @@
+<section class="testimonials section" id="testimonials">
+  <div class="container">
+    <app-section-header
+      tag="Testimonials"
+      title="What People Say"
+      accent="Say"
+      subtitle="Feedback from colleagues and clients I've worked with." />
+
+    <div class="testimonials-grid">
+      @for (item of testimonials; track item.name) {
+        <article class="testimonial-card">
+          <div class="author">
+            <div class="avatar">{{ item.avatar }}</div>
+            <div>
+              <div class="name">{{ item.name }}</div>
+              <div class="role">{{ item.role }}</div>
+            </div>
+          </div>
+          <p class="quote">"{{ item.quote }}"</p>
+          <div class="stars">
+            @for (star of stars; track star) {
+              <mat-icon>star</mat-icon>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

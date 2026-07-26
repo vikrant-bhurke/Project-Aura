@@ -1,0 +1,41 @@
+/* Global mobile / tablet responsive helpers */
+
+@media (max-width: 960px) {
+  :root {
+    --nav-height: 88px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .container {
+    width: min(var(--container), 92%);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --nav-height: 84px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .container {
+    width: min(var(--container), 94%);
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .section {
+    padding: 40px 0;
+  }
+}

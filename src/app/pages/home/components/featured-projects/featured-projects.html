@@ -1,0 +1,40 @@
+<section class="featured section" id="projects">
+  <div class="container">
+    <div class="featured-header">
+      <app-section-header
+        tag="Projects"
+        title="Featured Work"
+        accent="Work"
+        subtitle="A selection of projects I've built for enterprise clients and startups." />
+      <a routerLink="/projects" class="view-all">View All Projects →</a>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of featuredProjects; track project.title) {
+        <article class="project-card">
+          <div class="project-image" [style.background]="project.gradient">
+            <div class="project-mock">
+              <div class="mock-bar"></div>
+              <div class="mock-body">
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-chips">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="tags">
+              @for (tag of project.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

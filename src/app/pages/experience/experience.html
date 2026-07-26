@@ -1,1 +1,36 @@
-<p>experience works!</p>
+<section class="experience section" id="experience">
+  <div class="container">
+    <app-section-header
+      tag="Experience"
+      title="My Journey"
+      accent="Journey"
+      subtitle="Professional experience building enterprise Angular applications." />
+
+    <div class="timeline">
+      @for (job of experience; track job.company) {
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="company-logo">{{ job.logo }}</div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-top">
+              <span class="period">{{ job.period }}</span>
+              <span class="location">
+                <mat-icon>location_on</mat-icon>
+                {{ job.location }}
+              </span>
+            </div>
+            <h3>{{ job.role }}</h3>
+            <span class="company">{{ job.company }}</span>
+            <p class="summary">{{ job.summary }}</p>
+            <ul>
+              @for (point of job.highlights; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

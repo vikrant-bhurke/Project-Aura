@@ -1,1 +1,66 @@
-<p>contact works!</p>
+<section class="contact section">
+  <div class="container">
+    <app-section-header
+      tag="Contact"
+      title="Let's Work Together"
+      accent="Together"
+      subtitle="Have a project in mind? I'd love to hear about it. Send me a message!" />
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card">
+          <mat-icon>email</mat-icon>
+          <div>
+            <span class="label">Email</span>
+            <a [href]="'mailto:' + email">{{ email }}</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <mat-icon>location_on</mat-icon>
+          <div>
+            <span class="label">Location</span>
+            <span>{{ location }}</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <mat-icon>work</mat-icon>
+          <div>
+            <span class="label">Availability</span>
+            <span>Open to opportunities</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a [href]="social.github" target="_blank" rel="noopener">GitHub</a>
+          <a [href]="social.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+          <a [href]="social.twitter" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" [(ngModel)]="form.name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email-input">Email</label>
+            <input id="email-input" type="email" placeholder="your@email.com" [(ngModel)]="form.email" name="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Project inquiry" [(ngModel)]="form.subject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Tell me about your project..." [(ngModel)]="form.message" name="message" required></textarea>
+        </div>
+        @if (submitted()) {
+          <p class="success-msg">Thank you! Your message has been sent.</p>
+        }
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>

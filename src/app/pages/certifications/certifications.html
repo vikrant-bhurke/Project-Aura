@@ -1,1 +1,21 @@
-<p>certifications works!</p>
+<section class="certifications section" id="certifications">
+  <div class="container">
+    <app-section-header
+      tag="Credentials"
+      title="Certifications"
+      accent="Certifications"
+      subtitle="Validated expertise in modern web technologies and cloud platforms." />
+
+    <div class="certs-grid">
+      @for (cert of certifications; track cert.title) {
+        <div class="cert-card">
+          <div class="cert-icon" [style.--cert-color]="cert.color">
+            <img [src]="cert.icon" [alt]="cert.title" />
+          </div>
+          <h3>{{ cert.title }}</h3>
+          <span class="issuer">{{ cert.issuer }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

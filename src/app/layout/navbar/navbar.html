@@ -1,23 +1,33 @@
-<header class="navbar">
+<header class="navbar" [class.scrolled]="scrolled()">
+  <div class="container navbar-container">
+    <a routerLink="/" fragment="home" class="logo" (click)="closeMenu()">
+      <div class="logo-icon">VB</div>
+      <span class="logo-text">Vikrant Bhurke</span>
+    </a>
 
-    <div class="logo">
-      Project AURA
-    </div>
-  
-    <nav>
-  
-      <a routerLink="/">Home</a>
-  
-      <a routerLink="/about">About</a>
-  
-      <a routerLink="/skills">Skills</a>
-  
-      <a routerLink="/experience">Experience</a>
-  
-      <a routerLink="/projects">Projects</a>
-  
-      <a routerLink="/contact">Contact</a>
-  
+    <nav class="navbar-menu" [class.open]="menuOpen()">
+      @for (link of navLinks; track link.label) {
+        <a
+          [routerLink]="link.path"
+          [fragment]="link.fragment || undefined"
+          [class.active]="isActive(link)"
+          (click)="closeMenu()">
+          {{ link.label }}
+        </a>
+      }
     </nav>
-  
-  </header>
+
+    <div class="navbar-right">
+      <a routerLink="/contact" class="hire-btn">Hire Me</a>
+      <button
+        class="theme-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="theme.isDark() ? 'Switch to light mode' : 'Switch to dark mode'">
+        <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>

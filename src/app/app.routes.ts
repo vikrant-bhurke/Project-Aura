@@ -7,38 +7,16 @@ import { Experience } from './pages/experience/experience';
 import { Projects } from './pages/projects/projects';
 import { Certifications } from './pages/certifications/certifications';
 import { Contact } from './pages/contact/contact';
+import { Blog } from './pages/blog/blog';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: Home
-  },
-  {
-    path: 'about',
-    component: About
-  },
-  {
-    path: 'skills',
-    component: Skills
-  },
-  {
-    path: 'experience',
-    component: Experience
-  },
-  {
-    path: 'projects',
-    component: Projects
-  },
-  {
-    path: 'certifications',
-    component: Certifications
-  },
-  {
-    path: 'contact',
-    component: Contact
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
+  { path: '', component: Home },
+  { path: 'about', component: About },
+  { path: 'skills', component: Skills },
+  { path: 'experience', component: Experience },
+  { path: 'projects', component: Projects },
+  { path: 'certifications', component: Certifications },
+  { path: 'blog', component: Blog },
+  { path: 'contact', component: Contact },
+  { path: '**', redirectTo: '' },
 ];

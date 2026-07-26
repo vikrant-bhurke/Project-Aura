@@ -1,1 +1,31 @@
-<p>skills works!</p>
+<section class="skills section" id="skills">
+  <div class="container">
+    <app-section-header
+      tag="Skills"
+      title="My Tech Stack"
+      accent="Stack"
+      subtitle="A comprehensive toolkit for building modern, scalable web applications." />
+
+    <div class="tabs">
+      @for (tab of tabs; track tab.key) {
+        <button
+          class="tab"
+          [class.active]="activeTab() === tab.key"
+          (click)="setTab(tab.key)">
+          {{ tab.label }}
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid">
+      @for (skill of activeSkills(); track skill.name) {
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img [src]="skill.icon" [alt]="skill.name" />
+          </div>
+          <span>{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

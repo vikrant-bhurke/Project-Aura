@@ -1,0 +1,24 @@
+<section class="blog section">
+  <div class="container">
+    <app-section-header
+      tag="Blog"
+      title="Latest Articles"
+      accent="Articles"
+      subtitle="Thoughts on Angular, web development, and emerging technologies." />
+
+    <div class="blog-grid">
+      @for (post of posts; track post.title) {
+        <article class="blog-card">
+          <span class="blog-tag">{{ post.tag }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+          <div class="blog-meta">
+            <span>{{ post.date }}</span>
+            <span>{{ post.readTime }}</span>
+          </div>
+          <button class="read-more">Read More →</button>
+        </article>
+      }
+    </div>
+  </div>
+</section>

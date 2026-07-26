@@ -1,1 +1,38 @@
-<p>projects works!</p>
+<section class="projects section" id="projects-page">
+  <div class="container">
+    <app-section-header
+      tag="Projects"
+      title="All Projects"
+      accent="Projects"
+      subtitle="Enterprise applications and products I've built for clients worldwide." />
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <article class="project-card">
+          <div class="project-image" [style.background]="project.gradient">
+            <div class="project-mock">
+              <div class="mock-bar"></div>
+              <div class="mock-body">
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-chips">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="tags">
+              @for (tag of project.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            <button class="view-btn" type="button">View Project →</button>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

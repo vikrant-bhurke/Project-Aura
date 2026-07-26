@@ -1,1 +1,5 @@
-<p>scroll-top works!</p>
+@if (visible()) {
+  <button class="scroll-top" (click)="scrollToTop()" aria-label="Scroll to top">
+    <mat-icon>keyboard_arrow_up</mat-icon>
+  </button>
+}

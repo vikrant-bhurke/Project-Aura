@@ -1,1 +1,36 @@
-<p>about works!</p>
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img [src]="about.image" alt="Vikrant Bhurke at work" />
+        <div class="image-glow"></div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label">About</span>
+        <h2>About <span class="title-accent">Me</span></h2>
+        <p class="bio">{{ about.bio }}</p>
+        <p class="bio secondary">
+          I love crafting clean architectures, polished UI, and high-performance Angular apps
+          that scale with real business needs.
+        </p>
+
+        <a routerLink="/contact" class="btn-outline know-more">Know More About Me</a>
+      </div>
+
+      <div class="about-facts">
+        @for (item of about.highlights; track item.label) {
+          <div class="fact-card">
+            <div class="fact-icon">
+              <mat-icon>{{ item.icon }}</mat-icon>
+            </div>
+            <div>
+              <span class="fact-label">{{ item.label }}</span>
+              <span class="fact-value">{{ item.value }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

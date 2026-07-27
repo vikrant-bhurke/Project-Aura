@@ -1,17 +1,17 @@
 <header class="navbar" [class.scrolled]="scrolled()">
   <div class="container navbar-container">
-    <a routerLink="/" fragment="home" class="logo" (click)="closeMenu()">
-      <div class="logo-icon">VB</div>
+    <a routerLink="/" class="logo" (click)="onNavClick({ path: '/', fragment: null })" aria-label="Vikrant Bhurke home">
+      <div class="logo-icon" aria-hidden="true">VB</div>
       <span class="logo-text">Vikrant Bhurke</span>
     </a>
 
-    <nav class="navbar-menu" [class.open]="menuOpen()">
+    <nav class="navbar-menu" id="primary-nav" [class.open]="menuOpen()">
       @for (link of navLinks; track link.label) {
         <a
           [routerLink]="link.path"
           [fragment]="link.fragment || undefined"
           [class.active]="isActive(link)"
-          (click)="closeMenu()">
+          (click)="onNavClick(link)">
           {{ link.label }}
         </a>
       }
@@ -21,12 +21,19 @@
       <a routerLink="/contact" class="hire-btn">Hire Me</a>
       <button
         class="theme-btn"
+        type="button"
         (click)="toggleTheme()"
         [attr.aria-label]="theme.isDark() ? 'Switch to light mode' : 'Switch to dark mode'">
-        <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        <mat-icon aria-hidden="true">{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
-      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
-        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="primary-nav"
+        aria-label="Toggle menu">
+        <mat-icon aria-hidden="true">{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
       </button>
     </div>
   </div>

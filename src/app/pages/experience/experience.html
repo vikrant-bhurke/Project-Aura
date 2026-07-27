@@ -12,7 +12,13 @@
       @for (job of experience; track job.company; let i = $index) {
         <div class="timeline-item" appReveal [delay]="(i * 120) + 'ms'">
           <div class="timeline-marker">
-            <div class="company-logo">{{ job.logo }}</div>
+            <div class="company-logo" [class.has-image]="!!job.logoUrl">
+              @if (job.logoUrl) {
+                <img [src]="job.logoUrl" [alt]="job.company + ' logo'" width="40" height="40" loading="lazy" decoding="async" />
+              } @else {
+                {{ job.logo }}
+              }
+            </div>
           </div>
           <div class="timeline-card">
             <div class="card-top">

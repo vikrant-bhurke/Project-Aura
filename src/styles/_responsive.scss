@@ -2,11 +2,11 @@
 
 @media (max-width: 960px) {
   :root {
-    --nav-height: 88px;
+    --nav-height: 68px;
   }
 
   .section {
-    padding: 64px 0;
+    padding: 48px 0;
   }
 
   .container {
@@ -16,11 +16,11 @@
 
 @media (max-width: 600px) {
   :root {
-    --nav-height: 84px;
+    --nav-height: 64px;
   }
 
   .section {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .container {
@@ -36,6 +36,6 @@
 
 @media (max-width: 380px) {
   .section {
-    padding: 40px 0;
+    padding: 32px 0;
   }
 }

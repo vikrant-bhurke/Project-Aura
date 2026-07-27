@@ -1,0 +1,26 @@
+@if (enabled()) {
+  <div
+    class="cursor-fx"
+    [class.is-visible]="visible()"
+    [class.is-hovering]="hovering()"
+    aria-hidden="true">
+    <div
+      class="cursor-spotlight"
+      [style.transform]="'translate3d(' + spotX() + 'px, ' + spotY() + 'px, 0)'"></div>
+
+    @for (point of trail(); track point.id; let i = $index) {
+      <span
+        class="cursor-spark"
+        [style.--i]="i"
+        [style.transform]="'translate3d(' + point.x + 'px, ' + point.y + 'px, 0) scale(' + (1 - i * 0.08) + ')'"></span>
+    }
+
+    <div
+      class="cursor-core"
+      [style.transform]="'translate3d(' + x() + 'px, ' + y() + 'px, 0)'">
+      <span class="cross-h"></span>
+      <span class="cross-v"></span>
+      <span class="core-dot"></span>
+    </div>
+  </div>
+}

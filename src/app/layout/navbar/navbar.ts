@@ -23,7 +23,7 @@ export class Navbar implements OnInit {
   readonly currentUrl = signal('/');
 
   readonly navLinks = [
-    { label: 'Home', path: '/', fragment: 'home' },
+    { label: 'Home', path: '/', fragment: null as string | null },
     { label: 'About', path: '/', fragment: 'about' },
     { label: 'Skills', path: '/', fragment: 'skills' },
     { label: 'Experience', path: '/', fragment: 'experience' },
@@ -78,11 +78,23 @@ export class Navbar implements OnInit {
   isActive(link: { path: string; fragment: string | null }): boolean {
     const url = this.currentUrl();
 
+    if (link.path === '/' && !link.fragment) {
+      return url === '/' && this.activeSection() === 'home';
+    }
+
     if (link.fragment) {
       return url === '/' && this.activeSection() === link.fragment;
     }
 
     return url.startsWith(link.path);
+  }
+
+  onNavClick(link: { path: string; fragment: string | null }): void {
+    this.closeMenu();
+
+    if (link.path === '/' && !link.fragment) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   toggleTheme(): void {

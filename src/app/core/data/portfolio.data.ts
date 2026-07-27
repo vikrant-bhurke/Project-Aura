@@ -14,6 +14,7 @@ export interface Experience {
   role: string;
   period: string;
   logo: string;
+  logoUrl?: string;
   location: string;
   summary: string;
   highlights: string[];
@@ -24,6 +25,7 @@ export interface Project {
   description: string;
   tags: string[];
   gradient: string;
+  image?: string;
   link?: string;
 }
 
@@ -56,33 +58,33 @@ export const PORTFOLIO = {
   title: 'Software Engineer | Angular Expert | AI Enthusiast | Future Export Entrepreneur',
   tagline:
     'Building enterprise-grade web applications, beautiful user experiences and scalable digital products with Angular and modern technologies.',
-  email: 'vikrant.bhurke@email.com',
-  location: 'Pune, India',
+  email: 'vikrantbhurke.dev@gmail.com',
+  location: 'Mumbai, India',
   resumeUrl: '#',
 
   social: {
-    github: 'https://github.com/vikrantbhurke',
-    linkedin: 'https://linkedin.com/in/vikrantbhurke',
+    github: 'https://github.com/vikrant-bhurke',
+    linkedin: 'https://www.linkedin.com/in/vikrantbhurke12',
     twitter: 'https://twitter.com/vikrantbhurke',
     instagram: 'https://instagram.com/vikrantbhurke',
   },
 
   stats: [
-    { value: '2.5+', label: 'Years Experience', icon: 'work_history' },
+    { value: '3.5+', label: 'Years Experience', icon: 'work_history' },
     { value: '20+', label: 'Projects Completed', icon: 'folder_open' },
     { value: '10+', label: 'Technologies', icon: 'code' },
     { value: '5★', label: 'Client Ratings', icon: 'star' },
   ] as Stat[],
 
   about: {
-    bio: `I'm a passionate Software Engineer specializing in Angular and modern web technologies. With 2.5+ years of experience building enterprise applications, I focus on creating scalable, performant, and user-friendly solutions that drive business value.`,
+    bio: `I'm a passionate Software Engineer specializing in Angular and modern web technologies. With 3.5+ years of experience building enterprise applications, I focus on creating scalable, performant, and user-friendly solutions that drive business value.`,
     highlights: [
-      { label: 'Experience', value: '2.5+ Years', icon: 'schedule' },
+      { label: 'Experience', value: '3.5+ Years', icon: 'schedule' },
       { label: 'Projects', value: '20+ Completed', icon: 'rocket_launch' },
-      { label: 'Companies', value: '2 Worked At', icon: 'business' },
-      { label: 'Location', value: 'India', icon: 'location_on' },
+      { label: 'Companies', value: '3 Worked At', icon: 'business' },
+      { label: 'Location', value: 'Mumbai, India', icon: 'location_on' },
     ],
-    image: 'assets/images/vikrant.png',
+    image: 'assets/images/vikrant.webp',
   },
 
   skills: {
@@ -92,43 +94,61 @@ export const PORTFOLIO = {
       { name: 'JavaScript', icon: 'assets/icons/javascript.svg' },
       { name: 'HTML5', icon: 'assets/icons/html5-svgrepo-com.svg' },
       { name: 'CSS3', icon: 'assets/icons/CSS3.svg' },
-      { name: 'SCSS', icon: 'assets/icons/CSS3.svg' },
-      { name: 'Angular Material', icon: 'assets/icons/Angular.svg' },
-      { name: 'Bootstrap', icon: 'assets/icons/CSS3.svg' },
-      { name: 'RxJS', icon: 'assets/icons/javascript.svg' },
-      { name: 'NgRx', icon: 'assets/icons/Angular.svg' },
+      { name: 'SCSS', icon: 'assets/icons/sass.svg' },
+      { name: 'Angular Material', icon: 'assets/icons/material.svg' },
+      { name: 'Bootstrap', icon: 'assets/icons/bootstrap.svg' },
+      { name: 'RxJS', icon: 'assets/icons/rxjs.svg' },
+      { name: 'NgRx', icon: 'assets/icons/ngrx.svg' },
+      { name: 'Chart.js', icon: 'assets/icons/chartjs.svg' },
     ],
     backend: [
       { name: 'Node.js', icon: 'assets/icons/nodejs.svg' },
-      { name: 'Express.js', icon: 'assets/icons/nodejs.svg' },
-      { name: 'REST APIs', icon: 'assets/icons/javascript.svg' },
-      { name: 'MongoDB', icon: 'assets/icons/nodejs.svg' },
+      { name: 'Express.js', icon: 'assets/icons/express.svg' },
+      { name: 'REST APIs', icon: 'assets/icons/restapi.svg' },
+      { name: 'MongoDB', icon: 'assets/icons/mongodb.svg' },
     ],
     tools: [
       { name: 'Git', icon: 'assets/icons/git-icon-logo-svgrepo-com.svg' },
       { name: 'VS Code', icon: 'assets/icons/visual-studio-code-svgrepo-com.svg' },
       { name: 'Angular CLI', icon: 'assets/icons/Angular.svg' },
-      { name: 'npm', icon: 'assets/icons/nodejs.svg' },
+      { name: 'npm', icon: 'assets/icons/npm.svg' },
+      { name: 'Ionic', icon: 'assets/icons/ionic.svg' },
     ],
     cloud: [
       { name: 'AWS', icon: 'assets/icons/aws.svg' },
-      { name: 'Firebase', icon: 'assets/icons/aws.svg' },
-      { name: 'Vercel', icon: 'assets/icons/aws.svg' },
+      { name: 'Firebase', icon: 'assets/icons/firebase.svg' },
+      { name: 'Vercel', icon: 'assets/icons/vercel.svg' },
     ],
     future: [
-      { name: 'AI/ML', icon: 'assets/icons/javascript.svg' },
-      { name: 'Python', icon: 'assets/icons/nodejs.svg' },
-      { name: 'Docker', icon: 'assets/icons/aws.svg' },
-      { name: 'Kubernetes', icon: 'assets/icons/aws.svg' },
+      { name: 'AI/ML', icon: 'assets/icons/tensorflow.svg' },
+      { name: 'Python', icon: 'assets/icons/python.svg' },
+      { name: 'Docker', icon: 'assets/icons/docker.svg' },
+      { name: 'Kubernetes', icon: 'assets/icons/kubernetes.svg' },
     ],
   },
 
   experience: [
     {
+      company: '63 moons',
+      role: 'Software Engineer',
+      period: '05/2025 – Present',
+      logo: '63',
+      logoUrl: 'assets/images/companies/63moons.png',
+      location: 'Mumbai, India',
+      summary:
+        'Building client-facing dashboards and internal enterprise platforms with Angular, Chart.js, and modern web technologies.',
+      highlights: [
+        'Built interactive client dashboards using Chart.js for data visualization and reporting',
+        'Developed and enhanced HRMS modules for internal people and operations workflows',
+        'Contributed to an in-house SharePoint-like collaboration platform for documents and team productivity',
+      ],
+    },
+    {
       company: 'Alwrite',
       role: 'Angular Developer',
       period: '03/2024 – 02/2025',
       logo: 'AW',
+      logoUrl: 'assets/images/companies/alwrite.png',
       location: 'Lower Parel, Mumbai',
       summary:
         'Product (SuperAdmin, Property, Marine, Liability, Motor) + Service. Alwrite is a next-gen platform designed to empower intermediaries and insurance providers.',
@@ -145,6 +165,7 @@ export const PORTFOLIO = {
       role: 'Angular Developer',
       period: '08/2022 – 03/2024',
       logo: 'TC',
+      logoUrl: 'assets/images/companies/truecover.png',
       location: 'MBC Park, Thane',
       summary:
         'Product (Admin, Claims, Wallet, Motor, Health & Life) + Service. TrueCover offers cutting-edge Claims Automation using AI and ML-powered OCR.',
@@ -165,6 +186,7 @@ export const PORTFOLIO = {
         'Portal for brokers, insurers, and HR with customizable benefit options, onboarding flows, and data visualization.',
       tags: ['Angular 14', 'Material', 'RxJS', 'Charts'],
       gradient: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)',
+      image: 'assets/images/projects/admin-portal.jpg',
     },
     {
       title: 'Angular Portal Migration',
@@ -172,6 +194,7 @@ export const PORTFOLIO = {
         'Migrated a production insurance portal from Angular 10 to Angular 14 for better performance and compatibility.',
       tags: ['Angular', 'TypeScript', 'Migration'],
       gradient: 'linear-gradient(135deg, #134e4a 0%, #0d9488 100%)',
+      image: 'assets/images/projects/migration.jpg',
     },
     {
       title: 'User Management System',
@@ -179,6 +202,7 @@ export const PORTFOLIO = {
         'Comprehensive system with role-based access control, reusable components, and ticket management.',
       tags: ['Angular', 'NgRx', 'RBAC', 'REST API'],
       gradient: 'linear-gradient(135deg, #312e81 0%, #6366f1 100%)',
+      image: 'assets/images/projects/user-mgmt.jpg',
     },
     {
       title: 'Ionic Insurance Mobile App',
@@ -186,6 +210,7 @@ export const PORTFOLIO = {
         'Cross-platform Ionic app for brokers and customers with real-time data and API integration.',
       tags: ['Ionic', 'Angular', 'Mobile', 'API'],
       gradient: 'linear-gradient(135deg, #0f766e 0%, #22d3ee 100%)',
+      image: 'assets/images/projects/ionic-app.jpg',
     },
     {
       title: 'Endorsement Module',
@@ -193,6 +218,7 @@ export const PORTFOLIO = {
         'Modernized insurance endorsement workflows to automate processes and improve user experience.',
       tags: ['Angular', 'Forms', 'Insurance'],
       gradient: 'linear-gradient(135deg, #9a3412 0%, #f97316 100%)',
+      image: 'assets/images/projects/endorsement.jpg',
     },
     {
       title: 'Wallet Web Application',
@@ -200,6 +226,7 @@ export const PORTFOLIO = {
         'Wallet experience for claims and payments within the TrueCover ecosystem, built with Angular.',
       tags: ['Angular', 'Wallet', 'REST API'],
       gradient: 'linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%)',
+      image: 'assets/images/projects/wallet.jpg',
     },
   ] as Project[],
 
@@ -213,24 +240,43 @@ export const PORTFOLIO = {
 
   testimonials: [
     {
-      name: 'Sarah Johnson',
-      role: 'Product Manager, TechCorp',
-      quote: 'Vikrant delivered exceptional work on our enterprise portal. His Angular expertise and attention to detail exceeded our expectations.',
-      avatar: 'SJ',
+      name: 'Mukul Kumar',
+      role: 'AVP Engineering, TrueCover',
+      quote:
+        'Vikrant consistently delivered high-quality Angular work across complex insurance modules. Reliable, fast, and strong on architecture.',
+      avatar: 'MK',
       rating: 5,
     },
     {
-      name: 'Michael Chen',
-      role: 'CTO, StartupHub',
-      quote: 'A talented developer who consistently produces clean, maintainable code. Vikrant is a valuable asset to any development team.',
-      avatar: 'MC',
+      name: 'Amiya Sagar',
+      role: 'Cofounder & CTO, TrueCover',
+      quote:
+        'A dependable engineer who owns features end to end. Vikrant helped scale our portals with clean Angular code and solid delivery.',
+      avatar: 'AS',
       rating: 5,
     },
     {
-      name: 'Emily Davis',
-      role: 'Design Lead, Creative Agency',
-      quote: 'Working with Vikrant was seamless. He understands both technical requirements and user experience, delivering pixel-perfect implementations.',
-      avatar: 'ED',
+      name: 'Nitin Srivastava',
+      role: 'Co-Founder & CEO, TrueCover',
+      quote:
+        'Vikrant played a key role in building product experiences that mattered to our customers. Professional, proactive, and outcome-focused.',
+      avatar: 'NS',
+      rating: 5,
+    },
+    {
+      name: 'Nikhil Nemade',
+      role: 'Co-founder, Alwrite',
+      quote:
+        'From dashboards to mobile workflows, Vikrant executed with clarity and speed. A strong Angular developer and great team collaborator.',
+      avatar: 'NN',
+      rating: 5,
+    },
+    {
+      name: 'Shivraj Nadar',
+      role: 'Founding Team Member, Senior Product Manager, Alwrite',
+      quote:
+        'Working with Vikrant was smooth from ideation to release. He understands product needs and ships polished, maintainable UI.',
+      avatar: 'SN',
       rating: 5,
     },
   ] as Testimonial[],
@@ -285,8 +331,8 @@ export const PORTFOLIO = {
     resources: [
       { label: 'Certifications', path: '/certifications' },
       { label: 'Blog', path: '/blog' },
-      { label: 'GitHub', path: 'https://github.com/vikrantbhurke', external: true },
-      { label: 'LinkedIn', path: 'https://linkedin.com/in/vikrantbhurke', external: true },
+      { label: 'GitHub', path: 'https://github.com/vikrant-bhurke', external: true },
+      { label: 'LinkedIn', path: 'https://www.linkedin.com/in/vikrantbhurke12', external: true },
     ],
   },
 };

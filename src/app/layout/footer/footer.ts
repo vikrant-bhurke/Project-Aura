@@ -16,7 +16,7 @@ export class Footer {
   readonly email = PORTFOLIO.email;
   readonly services = PORTFOLIO.services;
   readonly quickLinks = [
-    { label: 'Home', path: '/', fragment: 'home' },
+    { label: 'Home', path: '/', fragment: null as string | null },
     { label: 'About', path: '/', fragment: 'about' },
     { label: 'Skills', path: '/', fragment: 'skills' },
     { label: 'Experience', path: '/', fragment: 'experience' },
@@ -25,8 +25,8 @@ export class Footer {
   readonly resourceLinks = [
     { label: 'Certifications', path: '/', fragment: 'certifications', external: false },
     { label: 'Blog', path: '/blog', fragment: null as string | null, external: false },
-    { label: 'GitHub', path: 'https://github.com/vikrantbhurke', fragment: null, external: true },
-    { label: 'LinkedIn', path: 'https://linkedin.com/in/vikrantbhurke', fragment: null, external: true },
+    { label: 'GitHub', path: PORTFOLIO.social.github, fragment: null as string | null, external: true },
+    { label: 'LinkedIn', path: PORTFOLIO.social.linkedin, fragment: null as string | null, external: true },
   ];
 
   readonly subscribed = signal(false);

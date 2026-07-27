@@ -12,7 +12,7 @@
       @for (cert of certifications; track cert.title; let i = $index) {
         <div class="cert-card" appReveal [delay]="(i * 80) + 'ms'">
           <div class="cert-icon" [style.--cert-color]="cert.color">
-            <img [src]="cert.icon" [alt]="cert.title" />
+            <img [src]="cert.icon" [alt]="cert.title" width="40" height="40" loading="lazy" decoding="async" />
           </div>
           <h3>{{ cert.title }}</h3>
           <span class="issuer">{{ cert.issuer }}</span>

@@ -6,8 +6,8 @@
 }
 
 .section {
-  padding: 96px 0;
-  scroll-margin-top: var(--nav-height);
+  padding: 64px 0;
+  scroll-margin-top: calc(var(--nav-height) + 12px);
 }
 
 .page-header {

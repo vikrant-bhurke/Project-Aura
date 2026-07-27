@@ -2,13 +2,22 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-image" appReveal>
-        <img [src]="about.image" alt="Vikrant Bhurke at work" />
+        <picture>
+          <source srcset="assets/images/vikrant.webp" type="image/webp" />
+          <img
+            src="assets/images/vikrant.jpg"
+            width="640"
+            height="640"
+            alt="Vikrant Bhurke at work"
+            loading="lazy"
+            decoding="async" />
+        </picture>
         <div class="image-glow"></div>
       </div>
 
       <div class="about-content" appReveal delay="100ms">
         <span class="section-label">About</span>
-        <h2>About <span class="title-accent">Me</span></h2>
+        <h2>Who I <span class="title-accent">Am</span></h2>
         <p class="bio">{{ about.bio }}</p>
         <p class="bio secondary">
           I love crafting clean architectures, polished UI, and high-performance Angular apps

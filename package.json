@@ -7,7 +7,8 @@
     "build": "ng build",
     "build:pages": "ng build --configuration=production --base-href=/ && cp dist/project-aura/browser/index.html dist/project-aura/browser/404.html",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lighthouse": "npx --yes lighthouse http://127.0.0.1:4173 --only-categories=performance,accessibility,best-practices,seo --preset=desktop --chrome-flags=\"--headless --no-sandbox\" --output=json --output-path=./lighthouse-report.json --quiet"
   },
   "prettier": {
     "printWidth": 100,

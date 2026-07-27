@@ -2,17 +2,93 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <title>Vikrant Bhurke | Software Engineer & Angular Expert</title>
+  <title>Vikrant Bhurke | Software Engineer &amp; Angular Expert</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, AI Enthusiast.">
+  <meta name="description" content="Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India.">
+  <meta name="author" content="Vikrant Bhurke">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://vikrantbhurke.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Vikrant Bhurke">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="Vikrant Bhurke | Software Engineer &amp; Angular Expert">
+  <meta property="og:description" content="Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India.">
+  <meta property="og:url" content="https://vikrantbhurke.com/">
+  <meta property="og:image" content="https://vikrantbhurke.com/assets/images/og-image.jpg">
+  <meta property="og:image:alt" content="Vikrant Bhurke — Software Engineer and Angular Expert">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@vikrantbhurke">
+  <meta name="twitter:creator" content="@vikrantbhurke">
+  <meta name="twitter:title" content="Vikrant Bhurke | Software Engineer &amp; Angular Expert">
+  <meta name="twitter:description" content="Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India.">
+  <meta name="twitter:image" content="https://vikrantbhurke.com/assets/images/og-image.jpg">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/vikrant.webp">
+  <link rel="manifest" href="manifest.webmanifest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/vikrant.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <script type="application/ld+json" id="ld-person">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vikrant Bhurke",
+    "url": "https://vikrantbhurke.com",
+    "image": "https://vikrantbhurke.com/assets/images/og-image.jpg",
+    "jobTitle": "Software Engineer",
+    "email": "vikrantbhurke.dev@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mumbai",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/vikrant-bhurke",
+      "https://www.linkedin.com/in/vikrantbhurke12",
+      "https://twitter.com/vikrantbhurke"
+    ],
+    "description": "Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India."
+  }
+  </script>
+  <script type="application/ld+json" id="ld-website">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vikrant Bhurke Portfolio",
+    "url": "https://vikrantbhurke.com",
+    "description": "Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India.",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Person",
+      "name": "Vikrant Bhurke"
+    }
+  }
+  </script>
 </head>
 <body>
+  <script>
+    // Prevent native hash scroll from tucking #home under the fixed navbar on refresh
+    if (location.hash === '#home') {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+  </script>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <app-root></app-root>
 </body>
 </html>

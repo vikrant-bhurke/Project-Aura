@@ -4,30 +4,34 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  padding: 16px 0 0;
-  transition: padding 0.3s;
+  padding: 0;
+  background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .navbar.scrolled {
-  padding-top: 10px;
+  background: var(--nav-bg);
+  border-bottom-color: var(--border);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
 .navbar-container {
-  max-width: 1400px;
-  width: 95%;
+  max-width: var(--container);
+  width: min(var(--container), 92%);
   margin: auto;
-  height: 68px;
-  padding: 0 22px;
+  height: var(--nav-height);
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: var(--nav-bg);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 0.3s, background 0.3s, border-color 0.3s;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .logo {
@@ -163,14 +167,8 @@
 }
 
 @media (max-width: 960px) {
-  .navbar {
-    padding: 10px 0 0;
-  }
-
   .navbar-container {
-    height: 60px;
-    padding: 0 12px 0 14px;
-    border-radius: 16px;
+    width: min(var(--container), 92%);
   }
 
   .menu-toggle {
@@ -193,7 +191,7 @@
   .navbar-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 8px);
     left: 0;
     right: 0;
     flex-direction: column;

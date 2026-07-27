@@ -24,24 +24,24 @@
       </div>
 
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <p class="footer-heading">Quick Links</p>
         @for (link of quickLinks; track link.label) {
-          <a [routerLink]="link.path" [fragment]="link.fragment">{{ link.label }}</a>
+          <a [routerLink]="link.path" [fragment]="link.fragment || undefined">{{ link.label }}</a>
         }
       </div>
 
       <div class="footer-col">
-        <h4>Services</h4>
+        <p class="footer-heading">Services</p>
         @for (service of services; track service) {
           <span>{{ service }}</span>
         }
       </div>
 
       <div class="footer-col">
-        <h4>Resources</h4>
+        <p class="footer-heading">Resources</p>
         @for (link of resourceLinks; track link.label) {
           @if (link.external) {
-            <a [href]="link.path" target="_blank" rel="noopener">{{ link.label }}</a>
+            <a [href]="link.path" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
           } @else {
             <a [routerLink]="link.path" [fragment]="link.fragment || undefined">{{ link.label }}</a>
           }
@@ -49,12 +49,20 @@
       </div>
 
       <div class="footer-newsletter">
-        <h4>Newsletter</h4>
+        <p class="footer-heading">Newsletter</p>
         <p>Subscribe to get notified about new projects and blog posts.</p>
         <form class="newsletter-form" (ngSubmit)="onSubscribe()">
-          <input type="email" placeholder="Enter your email" [(ngModel)]="emailInput" name="newsletter" required />
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            placeholder="Enter your email"
+            [(ngModel)]="emailInput"
+            name="newsletter"
+            autocomplete="email"
+            required />
           <button type="submit" aria-label="Subscribe">
-            <mat-icon>arrow_forward</mat-icon>
+            <mat-icon aria-hidden="true">arrow_forward</mat-icon>
           </button>
         </form>
         @if (subscribed()) {

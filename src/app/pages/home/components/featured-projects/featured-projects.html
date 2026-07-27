@@ -13,16 +13,26 @@
       @for (project of featuredProjects; track project.title; let i = $index) {
         <article class="project-card" appReveal [delay]="(i * 100) + 'ms'">
           <div class="project-image" [style.background]="project.gradient">
-            <div class="project-mock">
-              <div class="mock-bar"></div>
-              <div class="mock-body">
-                <div class="mock-line"></div>
-                <div class="mock-line short"></div>
-                <div class="mock-chips">
-                  <span></span><span></span><span></span>
+            @if (project.image) {
+              <img
+                [src]="project.image"
+                [alt]="project.title"
+                width="600"
+                height="360"
+                loading="lazy"
+                decoding="async" />
+            } @else {
+              <div class="project-mock">
+                <div class="mock-bar"></div>
+                <div class="mock-body">
+                  <div class="mock-line"></div>
+                  <div class="mock-line short"></div>
+                  <div class="mock-chips">
+                    <span></span><span></span><span></span>
+                  </div>
                 </div>
               </div>
-            </div>
+            }
           </div>
           <div class="project-body">
             <h3>{{ project.title }}</h3>

@@ -81,12 +81,21 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   transition: transform 0.35s, border-color 0.35s;
+  color: var(--text-primary);
 
   img {
     width: 32px;
     height: 32px;
     object-fit: contain;
     transition: transform 0.35s;
+  }
+}
+
+/* Brand-black icons (Express, Vercel) stay visible in light mode */
+:host-context([data-theme='light']) {
+  .skill-icon img[src*='express.svg'],
+  .skill-icon img[src*='vercel.svg'] {
+    filter: invert(1);
   }
 }
 

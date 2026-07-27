@@ -23,7 +23,7 @@
       @for (skill of activeSkills(); track skill.name; let i = $index) {
         <div class="skill-card" [style.animation-delay]="(i * 40) + 'ms'">
           <div class="skill-icon">
-            <img [src]="skill.icon" [alt]="skill.name" />
+            <img [src]="skill.icon" [alt]="skill.name" width="32" height="32" loading="lazy" decoding="async" />
           </div>
           <span>{{ skill.name }}</span>
         </div>

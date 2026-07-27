@@ -1,11 +1,36 @@
 .footer {
-  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 80% at 10% 0%, rgba(37, 99, 235, 0.16), transparent 55%),
+    radial-gradient(ellipse 50% 60% at 90% 100%, rgba(56, 189, 248, 0.1), transparent 50%),
+    linear-gradient(180deg, transparent 0%, rgba(11, 18, 32, 0.55) 100%),
+    var(--bg-secondary);
   border-top: 1px solid var(--border);
-  padding: 72px 0 0;
-  margin-top: 20px;
+  padding: 64px 0 0;
+  margin-top: 12px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(45, 124, 255, 0.18), transparent);
+    height: 1px;
+    top: 0;
+  }
+}
+
+[data-theme='light'] .footer {
+  background:
+    radial-gradient(ellipse 70% 80% at 10% 0%, rgba(37, 99, 235, 0.08), transparent 55%),
+    radial-gradient(ellipse 50% 60% at 90% 100%, rgba(59, 130, 246, 0.06), transparent 50%),
+    linear-gradient(180deg, rgba(244, 247, 251, 0.4) 0%, var(--bg-secondary) 100%);
 }
 
 .footer-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr 1.5fr;
   gap: 36px;
@@ -73,7 +98,7 @@
 }
 
 .footer-col {
-  h4 {
+  .footer-heading {
     font-size: 15px;
     font-weight: 700;
     color: var(--text-primary);
@@ -96,7 +121,7 @@
 }
 
 .footer-newsletter {
-  h4 {
+  .footer-heading {
     font-size: 15px;
     font-weight: 700;
     color: var(--text-primary);
@@ -160,13 +185,15 @@
 }
 
 .footer-bottom {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   border-top: 1px solid var(--border);
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   gap: 12px;
 }
 
@@ -176,7 +203,7 @@
   flex-wrap: wrap;
 
   a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s;
 

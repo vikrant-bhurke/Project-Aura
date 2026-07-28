@@ -445,9 +445,18 @@
   /* Keep floating tech badges from extending into the fixed header hit area */
   .hero-visual {
     overflow: visible;
+    isolation: isolate;
   }
 
   .tech {
+    z-index: 5;
+  }
+
+  .glow-ring {
+    z-index: 2;
+  }
+
+  .profile-frame {
     z-index: 1;
   }
 

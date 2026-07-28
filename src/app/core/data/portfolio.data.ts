@@ -41,6 +41,8 @@ export interface Testimonial {
   role: string;
   quote: string;
   avatar: string;
+  photoUrl?: string;
+  linkedin?: string;
   rating: number;
 }
 
@@ -65,7 +67,7 @@ export const PORTFOLIO = {
   social: {
     github: 'https://github.com/vikrant-bhurke',
     linkedin: 'https://www.linkedin.com/in/vikrantbhurke12',
-    twitter: 'https://twitter.com/vikrantbhurke',
+    twitter: 'https://x.com/bhurkevikrant',
     instagram: 'https://instagram.com/vikrantbhurke',
   },
 
@@ -245,6 +247,8 @@ export const PORTFOLIO = {
       quote:
         'Vikrant consistently delivered high-quality Angular work across complex insurance modules. Reliable, fast, and strong on architecture.',
       avatar: 'MK',
+      photoUrl: 'assets/images/testimonial/mukul-kumar.jpeg',
+      linkedin: 'https://www.linkedin.com/in/kumarmukul',
       rating: 5,
     },
     {
@@ -253,7 +257,9 @@ export const PORTFOLIO = {
       quote:
         'A dependable engineer who owns features end to end. Vikrant helped scale our portals with clean Angular code and solid delivery.',
       avatar: 'AS',
-      rating: 5,
+      photoUrl: 'assets/images/testimonial/amiya-sagar.jpeg',
+      linkedin: 'https://www.linkedin.com/in/amiyasagar',
+      rating: 4.5,
     },
     {
       name: 'Nitin Srivastava',
@@ -261,7 +267,9 @@ export const PORTFOLIO = {
       quote:
         'Vikrant played a key role in building product experiences that mattered to our customers. Professional, proactive, and outcome-focused.',
       avatar: 'NS',
-      rating: 5,
+      photoUrl: 'assets/images/testimonial/nitin-srivastava.jpg',
+      linkedin: 'https://www.linkedin.com/in/nitin-srivastava-974a711',
+      rating: 4,
     },
     {
       name: 'Nikhil Nemade',
@@ -269,6 +277,8 @@ export const PORTFOLIO = {
       quote:
         'From dashboards to mobile workflows, Vikrant executed with clarity and speed. A strong Angular developer and great team collaborator.',
       avatar: 'NN',
+      photoUrl: 'assets/images/testimonial/nikhil-nemade.jpeg',
+      linkedin: 'https://www.linkedin.com/in/nikhil-nemade-95a45a208',
       rating: 5,
     },
     {
@@ -277,7 +287,9 @@ export const PORTFOLIO = {
       quote:
         'Working with Vikrant was smooth from ideation to release. He understands product needs and ships polished, maintainable UI.',
       avatar: 'SN',
-      rating: 5,
+      photoUrl: 'assets/images/testimonial/shivraj-nadar.png',
+      linkedin: 'https://www.linkedin.com/in/shivraj-nadar-32415818a',
+      rating: 4.5,
     },
   ] as Testimonial[],
 

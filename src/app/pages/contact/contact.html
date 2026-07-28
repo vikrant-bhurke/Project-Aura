@@ -33,33 +33,86 @@
         <div class="social-links">
           <a [href]="social.github" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a [href]="social.twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a [href]="social.twitter" target="_blank" rel="noopener noreferrer">X / Twitter</a>
         </div>
       </div>
 
-      <form class="contact-form" (ngSubmit)="onSubmit()">
+      <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-row">
-          <div class="form-group">
+          <div class="form-group" [class.invalid]="!!fieldError('name')">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" [(ngModel)]="form.name" name="name" required />
+            <input
+              id="name"
+              type="text"
+              placeholder="Your name"
+              formControlName="name"
+              autocomplete="name"
+              [attr.aria-invalid]="!!fieldError('name')"
+              aria-describedby="name-error" />
+            @if (fieldError('name'); as err) {
+              <p class="field-error" id="name-error">{{ err }}</p>
+            }
           </div>
-          <div class="form-group">
+          <div class="form-group" [class.invalid]="!!fieldError('email')">
             <label for="email-input">Email</label>
-            <input id="email-input" type="email" placeholder="your@email.com" [(ngModel)]="form.email" name="email" required />
+            <input
+              id="email-input"
+              type="email"
+              placeholder="your@email.com"
+              formControlName="email"
+              autocomplete="email"
+              [attr.aria-invalid]="!!fieldError('email')"
+              aria-describedby="email-error" />
+            @if (fieldError('email'); as err) {
+              <p class="field-error" id="email-error">{{ err }}</p>
+            }
           </div>
         </div>
-        <div class="form-group">
+
+        <div class="form-group" [class.invalid]="!!fieldError('subject')">
           <label for="subject">Subject</label>
-          <input id="subject" type="text" placeholder="Project inquiry" [(ngModel)]="form.subject" name="subject" required />
+          <input
+            id="subject"
+            type="text"
+            placeholder="Project inquiry"
+            formControlName="subject"
+            [attr.aria-invalid]="!!fieldError('subject')"
+            aria-describedby="subject-error" />
+          @if (fieldError('subject'); as err) {
+            <p class="field-error" id="subject-error">{{ err }}</p>
+          }
         </div>
-        <div class="form-group">
+
+        <div class="form-group" [class.invalid]="!!fieldError('message')">
           <label for="message">Message</label>
-          <textarea id="message" rows="5" placeholder="Tell me about your project..." [(ngModel)]="form.message" name="message" required></textarea>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Tell me about your project..."
+            formControlName="message"
+            [attr.aria-invalid]="!!fieldError('message')"
+            aria-describedby="message-error"></textarea>
+          @if (fieldError('message'); as err) {
+            <p class="field-error" id="message-error">{{ err }}</p>
+          }
         </div>
+
+        <!-- Honeypot for bots -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" type="text" formControlName="website" tabindex="-1" autocomplete="off" />
+        </div>
+
         @if (submitted()) {
-          <p class="success-msg">Thank you! Your message has been sent.</p>
+          <p class="success-msg" role="status">Thank you! Your message has been sent to my inbox.</p>
         }
-        <button type="submit" class="btn-primary">Send Message</button>
+        @if (submitError(); as err) {
+          <p class="error-msg" role="alert">{{ err }}</p>
+        }
+
+        <button type="submit" class="btn-primary" [disabled]="submitting()">
+          {{ submitting() ? 'Sending...' : 'Send Message' }}
+        </button>
       </form>
     </div>
   </div>

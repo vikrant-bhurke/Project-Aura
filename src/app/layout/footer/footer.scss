@@ -7,8 +7,8 @@
     linear-gradient(180deg, transparent 0%, rgba(11, 18, 32, 0.55) 100%),
     var(--bg-secondary);
   border-top: 1px solid var(--border);
-  padding: 64px 0 0;
-  margin-top: 12px;
+  padding: 40px 0 0;
+  margin-top: 0;
 
   &::before {
     content: '';
@@ -222,17 +222,26 @@
 
 @media (max-width: 600px) {
   .footer {
-    padding: 48px 0 0;
+    padding: 32px 0 0;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
     padding-bottom: 32px;
   }
 
-  .footer-brand p {
-    max-width: none;
+  .footer-brand {
+    grid-column: 1 / -1;
+
+    p {
+      max-width: none;
+    }
+  }
+
+  .footer-col .footer-heading,
+  .footer-newsletter .footer-heading {
+    margin-bottom: 12px;
   }
 
   .footer-bottom {

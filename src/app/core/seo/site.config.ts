@@ -5,7 +5,7 @@ export const SITE = {
     'Portfolio of Vikrant Bhurke — Software Engineer, Angular Expert, and AI Enthusiast building enterprise-grade web apps in Mumbai, India.',
   url: 'https://vikrantbhurke.com',
   locale: 'en_IN',
-  twitter: '@vikrantbhurke',
+  twitter: '@bhurkevikrant',
   image: 'https://vikrantbhurke.com/assets/images/og-image.jpg',
   imageAlt: 'Vikrant Bhurke — Software Engineer and Angular Expert',
   email: 'vikrantbhurke.dev@gmail.com',
@@ -14,7 +14,7 @@ export const SITE = {
   sameAs: [
     'https://github.com/vikrant-bhurke',
     'https://www.linkedin.com/in/vikrantbhurke12',
-    'https://twitter.com/vikrantbhurke',
+    'https://x.com/bhurkevikrant',
   ],
 } as const;
 

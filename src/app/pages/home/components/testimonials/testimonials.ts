@@ -14,4 +14,14 @@ import { RevealDirective } from '../../../../shared/reveal/reveal.directive';
 export class Testimonials {
   readonly testimonials = PORTFOLIO.testimonials;
   readonly stars = [1, 2, 3, 4, 5];
+
+  starIcon(rating: number, star: number): string {
+    if (rating >= star) {
+      return 'star';
+    }
+    if (rating >= star - 0.5) {
+      return 'star_half';
+    }
+    return 'star_border';
+  }
 }

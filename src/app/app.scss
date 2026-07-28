@@ -1,4 +1,11 @@
+:host {
+  display: block;
+  position: relative;
+}
+
 .app-container {
+  position: relative;
+  z-index: 0;
   padding-top: var(--nav-height);
   min-height: calc(100vh - var(--nav-height));
 }

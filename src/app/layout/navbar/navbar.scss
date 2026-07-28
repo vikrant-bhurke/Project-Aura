@@ -1,18 +1,29 @@
-.navbar {
+/* Host must own the stacking layer — transformed page content can otherwise
+   paint above a fixed child and steal taps from the mobile menu button. */
+:host {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 1100;
+  isolation: isolate;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
   padding: 0;
-  background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
   border-bottom: 1px solid transparent;
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .navbar.scrolled {
-  background: var(--nav-bg);
   border-bottom-color: var(--border);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 }
@@ -27,6 +38,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 1;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -107,6 +119,8 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .theme-btn,
@@ -123,6 +137,10 @@
   cursor: pointer;
   transition: background 0.3s, border-color 0.3s;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .theme-btn:hover,
@@ -167,6 +185,11 @@
 }
 
 @media (max-width: 960px) {
+  .navbar {
+    /* More opaque bar on mobile avoids Safari backdrop-filter hit-testing bugs */
+    background: var(--nav-menu-bg);
+  }
+
   .navbar-container {
     width: min(var(--container), 92%);
   }
@@ -194,6 +217,7 @@
     top: calc(100% + 8px);
     left: 0;
     right: 0;
+    z-index: 3;
     flex-direction: column;
     align-items: stretch;
     padding: 12px;
@@ -201,9 +225,10 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     gap: 2px;
     box-shadow: var(--shadow);
-    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
     overflow-y: auto;
   }
 

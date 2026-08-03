@@ -138,11 +138,11 @@ export const PORTFOLIO = {
       logoUrl: 'assets/images/companies/63moons.png',
       location: 'Mumbai, India',
       summary:
-        'Building client-facing dashboards and internal enterprise platforms with Angular, Chart.js, and modern web technologies.',
+        'Building enterprise Angular applications with Chart.js visualizations, reusable UI architecture, and scalable frontend patterns.',
       highlights: [
-        'Built interactive client dashboards using Chart.js for data visualization and reporting',
-        'Developed and enhanced HRMS modules for internal people and operations workflows',
-        'Contributed to an in-house SharePoint-like collaboration platform for documents and team productivity',
+        'Implemented interactive Chart.js dashboards with dynamic datasets, filters, and real-time chart updates',
+        'Developed reusable Angular components and services with RxJS for state handling and API-driven UI flows',
+        'Optimized frontend performance and modular architecture for large-scale enterprise web applications',
       ],
     },
     {

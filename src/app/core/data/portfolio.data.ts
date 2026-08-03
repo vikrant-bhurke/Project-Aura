@@ -31,7 +31,6 @@ export interface Project {
 
 export interface Certification {
   title: string;
-  issuer: string;
   icon: string;
   color: string;
 }
@@ -233,11 +232,11 @@ export const PORTFOLIO = {
   ] as Project[],
 
   certifications: [
-    { title: 'Angular Developer', issuer: 'Google', icon: 'assets/icons/Angular.svg', color: '#dd0031' },
-    { title: 'AWS Cloud Practitioner', issuer: 'Amazon', icon: 'assets/icons/aws.svg', color: '#ff9900' },
-    { title: 'JavaScript Specialist', issuer: 'Meta', icon: 'assets/icons/javascript.svg', color: '#f7df1e' },
-    { title: 'TypeScript Pro', issuer: 'Microsoft', icon: 'assets/icons/typescript.svg', color: '#3178c6' },
-    { title: 'Git & GitHub', issuer: 'GitHub', icon: 'assets/icons/git-icon-logo-svgrepo-com.svg', color: '#f05032' },
+    { title: 'Angular Developer', icon: 'assets/icons/Angular.svg', color: '#dd0031' },
+    { title: 'AWS Cloud Practitioner', icon: 'assets/icons/aws.svg', color: '#ff9900' },
+    { title: 'JavaScript Specialist', icon: 'assets/icons/javascript.svg', color: '#f7df1e' },
+    { title: 'TypeScript Pro', icon: 'assets/icons/typescript.svg', color: '#3178c6' },
+    { title: 'Git & GitHub', icon: 'assets/icons/git-icon-logo-svgrepo-com.svg', color: '#f05032' },
   ] as Certification[],
 
   testimonials: [
